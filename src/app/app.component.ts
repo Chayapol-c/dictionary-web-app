@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 import {RouterOutlet} from '@angular/router';
 import {FormsModule} from '@angular/forms';
 import {DictionaryService} from './dictionary.service';
-import {Dictionary} from './dictionary';
+import {Dictionary} from './models/dictionary';
 import {Observable} from 'rxjs';
 import {AsyncPipe} from '@angular/common';
 
