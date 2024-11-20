@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import {RouterOutlet} from '@angular/router';
 import {FormsModule} from '@angular/forms';
 import {DictionaryService} from './dictionary.service';
 import {Dictionary} from './dictionary';
@@ -19,7 +19,8 @@ export class AppComponent {
 
   searchedWordInfo$!: Observable<Dictionary[]>
 
-  constructor(private dictionaryService: DictionaryService) {}
+  constructor(private dictionaryService: DictionaryService) {
+  }
 
 
   onSearch() {
