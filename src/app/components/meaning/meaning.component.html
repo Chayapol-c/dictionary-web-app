@@ -1,0 +1,38 @@
+<div class="meaning-content">
+  <p class="part-of-speech">{{ meaningData.partOfSpeech }}</p>
+  <p class="meaning-label">Meaning</p>
+  <ul class="meaning-list">
+    @for (definition of meaningData.definitions; track definition.definition) {
+      <li>
+        <p>
+          {{ definition.definition }}
+        </p>
+        @if (definition.example !== '') {
+          {{ definition.example }}
+        }
+      </li>
+    }
+  </ul>
+
+  @if (meaningData.synonyms.length > 0) {
+    <div class="additional-info">
+      <p class="meaning-label">
+        Synonyms
+      </p>
+      <a>
+        <span>{{ meaningData.synonyms.join(" ") }}</span>
+      </a>
+    </div>
+  }
+
+  @if (meaningData.antonyms.length > 0) {
+    <div class="additional-info">
+      <p class="meaning-label">
+        Antonyms
+      </p>
+      <a>
+        <span>{{ meaningData.synonyms.join(" ") }}</span>
+      </a>
+    </div>
+  }
+</div>

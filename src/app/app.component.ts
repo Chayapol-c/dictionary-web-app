@@ -1,15 +1,16 @@
 import {Component} from '@angular/core';
 import {RouterOutlet} from '@angular/router';
 import {FormsModule} from '@angular/forms';
-import {DictionaryService} from './dictionary.service';
+import {DictionaryService} from './services/dictionary.service';
 import {Dictionary} from './models/dictionary';
 import {Observable} from 'rxjs';
-import {AsyncPipe} from '@angular/common';
+import {AsyncPipe, NgForOf} from '@angular/common';
+import {MeaningComponent} from './components/meaning/meaning.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, FormsModule, AsyncPipe],
+  imports: [RouterOutlet, FormsModule, AsyncPipe, MeaningComponent, NgForOf],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

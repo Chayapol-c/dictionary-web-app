@@ -32,46 +32,7 @@
             </div>
           </div>
 
-          @for (meaning of word.meanings; track meaning.definitions) {
-            <div class="meaning-content">
-              <p class="part-of-speech">{{ meaning.partOfSpeech }}</p>
-              <p class="meaning-label">Meaning</p>
-              <ul class="meaning-list">
-                @for (definition of meaning.definitions; track definition.definition) {
-                  <li>
-                    <p>
-                      {{ definition.definition }}
-                    </p>
-                    @if (definition.example !== '') {
-                      {{ definition.example }}
-                    }
-                  </li>
-                }
-              </ul>
-
-              @if (meaning.synonyms.length > 0) {
-                <div class="additional-info">
-                  <p class="meaning-label">
-                    Synonyms
-                  </p>
-                  <a>
-                    <span>{{ meaning.synonyms.join(" ") }}</span>
-                  </a>
-                </div>
-              }
-
-              @if (meaning.antonyms.length > 0) {
-                <div class="additional-info">
-                  <p class="meaning-label">
-                    Antonyms
-                  </p>
-                  <a>
-                    <span>{{ meaning.synonyms.join(" ") }}</span>
-                  </a>
-                </div>
-              }
-            </div>
-          }
+          <word-meaning *ngFor="let meaning of word.meanings" [meaningData]="meaning" />
 
           <div class="source-content">
             <span>
